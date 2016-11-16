@@ -271,3 +271,6 @@ config.ps1
 
 *.csv
 *.etl
+
+# R history
+.Rhistory
