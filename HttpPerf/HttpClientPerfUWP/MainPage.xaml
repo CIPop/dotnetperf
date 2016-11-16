@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="HttpClientPerfUWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HttpClientPerfUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Padding="10" Margin="5">
+            <TextBlock>Server URI</TextBlock>
+            <TextBox x:Name="_txtServer" Margin="5" Text="http://"/>
+            <TextBlock>Iterations</TextBlock>
+            <TextBox x:Name="_txtIterations" Margin="5" Text="500"/>
+            <TextBlock>Client instances</TextBlock>
+            <TextBox x:Name="_txtClientInstances" Margin="5" Text="50"/>
+            <TextBlock>POST characters (if 0 then verb will be GET)</TextBlock>
+            <TextBox x:Name="_txtPostCharacters" Margin="5" Text="0"/>
+            <ComboBox Margin="5">
+                <ComboBoxItem x:Name="_cmbAsync" IsSelected="True">async</ComboBoxItem>
+                <ComboBoxItem x:Name="_cmbSync" >sync</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Margin="5">
+                <ComboBoxItem x:Name="_cmbHttpClient" IsSelected="True">HttpClient</ComboBoxItem>
+                <ComboBoxItem x:Name="_cmbNullClient" >NullClient (measures harness overheads)</ComboBoxItem>
+            </ComboBox>
+
+            <Button x:Name="_btnRun" Margin="5" Click="btnRun_Click">Run Test</Button>
+        </StackPanel>
+    </Grid>
+</Page>
